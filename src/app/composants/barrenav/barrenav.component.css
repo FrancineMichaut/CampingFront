@@ -1,0 +1,38 @@
+@media all and (min-width: 992px) {
+
+
+
+  #navbarToggle {
+    height: 120px;
+
+  }
+
+  .logo-text {
+    margin: -25px 15px 0 0;
+  }
+
+
+}
+
+@media all and (max-width: 991px) {
+
+
+    #navbarToggle img {
+        margin-left: -10%;
+      }
+  
+
+    .logo-text {
+        display: none;
+      }
+
+
+}
+
+
+#navbarToggle img {
+  width: 250px;
+  z-index: 2
+}
+
+
