@@ -1,0 +1,105 @@
+<!-- *************************************Navbar******************************** -->
+
+<div class="row">
+    <div id="barrenav" class="border border-dark border-top-0"
+        style="height: 120px;font-family: Arial Rounded MT Bold;">
+        <nav class="navbar navbar-expand-lg bg-link">
+
+            <div class="container-fluid">
+                <img src="../../../assets/Logo6.png" style="width: 250px; z-index: 2;">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+              
+
+                <div class="collapse navbar-collapse d-flex justify-content-between " id="navbarNavDropdown">
+                    
+                    <div class="fs-2 text-success mb-5">HIPPOCAMPIA</div>
+                    <a class="navbar-brand ms-5 mb-4 text-secondary" href="#">Notre histoire</a>
+
+                    <div class="col-5">
+                        <ul class="navbar-nav">
+                            <li class="nav-item mt-1 mb-4">
+                                <a class="navbar-brand ms-5 "> Réservations </a>
+                            </li>
+                            <li class="nav-item mt-1 text-secondary ms-5">
+                                <a class="navbar-brand text-secondary ms-5" href="#" id="navbarDropdownMenuLink"
+                                    role="button" data-bs-toggle="dropdown" aria-expanded="false"> Les activités
+                                    </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                    <li><a class="dropdown-item" href="#">Les randonnées</a>
+                                    </li>
+                                    <li><a class="dropdown-item" href="#">Le marché bio</a></li>
+                                    <li><a class="dropdown-item" href="#">Agriculture et cueillette</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col-2 ">
+                        <ul class="navbar-nav ">
+                            <li class="nav-item dropdown">
+                                <a class="btn btn-light nav-link dropdown-toggle" id="navbarDropdown" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    Administrateur
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" routerLink="/reservations">Gestion des réservations</a>
+                                    </li>
+                                    <li><a class="dropdown-item" routerLink="/ajouterunechambre">Ajouter une
+                                            roulotte</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </nav>
+    </div>
+</div>
+
+
+
+
+
+<!-- <nav class="navbar navbar-expand-lg bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Navbar</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Dropdown
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled">Disabled</a>
+          </li>
+        </ul>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav> -->
