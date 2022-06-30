@@ -69,25 +69,28 @@
 
 <nav id="navbarToggle" class="navbar navbar-expand-lg bg-white">
   <div class="container-fluid">
-    <img class="navbar-brand mt-5 me-0" src="../../../assets/Logo6.png">
+    <img class="navbar-brand mt-5 me-0 z-index:2;" src="../../../assets/Logo6.png">
     <div class="logo-text fs-2 text-warning">HIPPOCAMPIA</div>
-    
+
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <div class="collapse navbar-collapse ms-5" id="navbarSupportedContent">
 
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-5">
         <!-- <li class="nav-item">
             <a class="nav-link active fs-2 text-warning" aria-current="page" href="#">HIPPOCAMPIA</a>
           </li> -->
         <li class="nav-item">
-          <a class="nav-link ms-5 fs-5" href="#">Réservations</a>
+          <a class="nav-link ms-5 fs-5" href="#">Notre histoire</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link ms-5 fs-5" routerLink="/reservations">Réservations</a>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle ms-5 fs-5" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
-            aria-expanded="false">
+          <a class="nav-link dropdown-toggle ms-5 fs-5" href="#" id="navbarDropdown" role="button"
+            data-bs-toggle="dropdown" aria-expanded="false">
             Les activités
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -99,14 +102,11 @@
             <li><a class="dropdown-item" href="#">Cueillette et agriculture</a></li>
           </ul>
         </li>
-        <li class="nav-item">
-          <a class="nav-link disabled ms-5 fs-5">Disabled</a>
-        </li>
       </ul>
-      <form class="d-flex" role="search">
+      <!-- <form class="d-flex" role="search">
         <input class="form-control me-2" type="search" placeholder="recherche" aria-label="Search">
         <button class="btn btn-outline-success" type="submit">Chercher</button>
-      </form>
+      </form> -->
     </div>
   </div>
 </nav>
