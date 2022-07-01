@@ -8,17 +8,17 @@ import { CampingService } from 'src/app/services/camping.service';
 })
 export class ReservationsComponent implements OnInit {
 
-  // reservations : any = []
+  reservations : any = []
 
-  // rupdate = {
-  //   id : "",
-  //   titre:"",
-  //   type:"",
-  //   categories :"",
-  //   description :"",
-  //   image :"",
-  //   price:""
-  // }
+  rupdate = {
+    id : "",
+    titre:"",
+    type:"",
+    categories :"",
+    description :"",
+    image :"",
+    price:""
+  }
 
 
 
@@ -26,35 +26,45 @@ export class ReservationsComponent implements OnInit {
   constructor (private campingservice : CampingService) { }
 
   ngOnInit(): void {
-    // this.booking();
+    this.bookings()
   }
 
-  // booking() {
-  //     this.campingservice.getbookings().subscribe(data =>{
-  //       this.reservations= data;
-  //       console.log(this.booking);
-  //     })
+  bookings() {
+      this.campingservice.getBookings().subscribe( data=>{
+        this.reservations = data;
+        console.log(this.reservations);
+        
+      })
 
 
-
-  // deleteReservation(id: any) {
-  //   console.log(id);
-  //   this.campingservice.delete(id).subscribe(() => {
-  //     console.log("livres with id : "+id + "deleted");
-  //     this.booking()
-  //   })
-  // }
-
-
-  // edit(l:any) {
-  //   this.rupdate.id=r_id
+  // deleteReservation (r: any) {
+  // console.log();
+  // this.campingservice.delete(_id).subscribe(() => {
+  //   console.log("reservations with id : "id +"deleted");
+  //   this.bookings
+  // })
+  
+  // edit (r,any) {
+  //   this.rupdate.id=r._id
   //   this.rupdate.titre=r.titre
-  //   this.rupdate.type=r.type
-  //   this.rupdate.categories=r.categories
-  //   this.rupdate.description=r.description
-  //   this.rupdate.image=r.image
-  //   this.rupdate.price=r.price
+  //   this.rupdate.type = r.type
+  //   this.rupdate.description = r.description
+  //   this.rupdate.image = r.image
+  //   this.rupdate.price = r.price
+  //   console.log(this.rupdate);
+
   // }
+
+
+
+
+
+
+}
+
+
+
+
 
 
 
