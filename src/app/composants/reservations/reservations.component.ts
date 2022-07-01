@@ -34,15 +34,15 @@ export class ReservationsComponent implements OnInit {
         this.reservations = data;
         console.log(this.reservations);
         
-      })
+      })}
 
 
-  // deleteReservation (r: any) {
-  // console.log();
-  // this.campingservice.delete(_id).subscribe(() => {
-  //   console.log("reservations with id : "id +"deleted");
-  //   this.bookings
-  // })
+  deleteReservation (id: any) {
+  console.log();
+  this.campingservice.delete(id).subscribe(() => {
+    console.log("reservations with id : "+id +"deleted");
+    this.bookings
+  })
   
   // edit (r,any) {
   //   this.rupdate.id=r._id
@@ -62,28 +62,28 @@ export class ReservationsComponent implements OnInit {
 
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

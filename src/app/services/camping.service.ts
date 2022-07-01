@@ -14,7 +14,7 @@ getBookings(){
 }
 
 delete(id: any) {
-  return this.http.delete('http://localhost:3000/livres/'+id)
+  return this.http.delete('https://thawing-atoll-53826.herokuapp.com/campings/'+id)
 }
 edit(r:any){
   return this.http.put("https://thawing-atoll-53826.herokuapp.com/campings/"+r.id , r)
