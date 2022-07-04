@@ -43,17 +43,27 @@ export class ReservationsComponent implements OnInit {
     console.log("reservations with id : "+id +"deleted");
     this.bookings
   })
-  
-  // edit (r,any) {
-  //   this.rupdate.id=r._id
-  //   this.rupdate.titre=r.titre
-  //   this.rupdate.type = r.type
-  //   this.rupdate.description = r.description
-  //   this.rupdate.image = r.image
-  //   this.rupdate.price = r.price
-  //   console.log(this.rupdate);
+  }
 
-  // }
+  edit (r:any) {
+    this.rupdate.id=r._id
+    this.rupdate.titre=r.titre
+    this.rupdate.type = r.type
+    this.rupdate.description = r.description
+    this.rupdate.image = r.image
+    this.rupdate.price = r.price
+    console.log(this.rupdate);
+  }
+
+
+  miseJourR() {
+    console.log(this.rupdate);
+    this.campingservice.edit(this.rupdate).subscribe(() => {
+      this.bookings();
+      console.log('Vos modifications ont été effectuées');
+      
+    } )
+  }
 
 
 
@@ -62,7 +72,7 @@ export class ReservationsComponent implements OnInit {
 
 }
 
-}
+
 
 
 

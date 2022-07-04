@@ -10,14 +10,14 @@ export class CampingService {
 
 
 getBookings(){
-  return this.http.get('https://thawing-atoll-53826.herokuapp.com/campings')
+  return this.http.get(':https://thawing-atoll-53826.herokuapp.com/campings')
 }
 
 delete(id: any) {
-  return this.http.delete('https://thawing-atoll-53826.herokuapp.com/campings/'+id)
+  return this.http.delete(':https://thawing-atoll-53826.herokuapp.com/campings/'+id)
 }
 edit(r:any){
-  return this.http.put("https://thawing-atoll-53826.herokuapp.com/campings/"+r.id , r)
+  return this.http.put(":https://thawing-atoll-53826.herokuapp.com/campings/"+r.id , r)
 }
 
 
