@@ -21,7 +21,10 @@ export class CampingService {
     return this.http.put("https://thawing-atoll-53826.herokuapp.com/campings/"+r.id , r)
   }
 
+  saveReservation(reservation:any){
 
+    return this.http.post("https://thawing-atoll-53826.herokuapp.com/campings/", reservation)   // méthode qui enregistre les modifications apportées dans la partie admin, ajouter une réservation 
+  }
 
 
 
