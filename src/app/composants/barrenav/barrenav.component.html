@@ -14,23 +14,23 @@
 
       <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-5">
         <li class="nav-item">
-          <a class="nav-link ms-5 fs-5" href="#">Notre histoire</a>
+          <a class="nav-link ms-5 fs-5" href="#">| Notre histoire |</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link ms-5 fs-5" routerLink="/reservations">Réservations</a>
+          <a class="nav-link ms-5 fs-5" routerLink="/reservations">| Réservations |</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle ms-5 fs-5" href="#" id="navbarDropdown" role="button"
             data-bs-toggle="dropdown" aria-expanded="false">
-            Les activités
+            | Les activités |
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">Les randonnées</a></li>
-            <li><a class="dropdown-item" href="#">Le marché bio</a></li>
+            <li><a class="dropdown-item" href="#" routerLink="/randonnees">Les randonnées</a></li>
+            <li><a class="dropdown-item" href="#" routerLink="/marchebio">Le marché bio</a></li>
             <li>
               <hr class="dropdown-divider">
             </li>
-            <li><a class="dropdown-item" href="#">Cueillette et agriculture</a></li>
+            <li><a class="dropdown-item" href="#" routerLink="/agriculture">Cueillette et agriculture</a></li>
           </ul>
         </li>
       </ul>
@@ -91,9 +91,9 @@
 
 
   <!-- Button trigger modal -->
-  <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+  <div class="d-grid me-5">
 
-    <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"
+    <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#exampleModal"
       *ngIf="!boutonLogin">
       Login
     </button>

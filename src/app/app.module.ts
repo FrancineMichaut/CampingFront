@@ -9,6 +9,9 @@ import { BarrenavComponent } from './composants/barrenav/barrenav.component';
 import { AccueilComponent } from './composants/accueil/accueil.component';
 import { ReservationsComponent } from './composants/reservations/reservations.component';
 import { AjouterunereservationComponent } from './composants/ajouterunereservation/ajouterunereservation.component';
+import { RandonneesComponent } from './composants/randonnees/randonnees.component';
+import { MarchebioComponent } from './composants/marchebio/marchebio.component';
+import { AgricultureComponent } from './composants/agriculture/agriculture.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +19,10 @@ import { AjouterunereservationComponent } from './composants/ajouterunereservati
     BarrenavComponent,
     AccueilComponent,
     ReservationsComponent,
-    AjouterunereservationComponent
+    AjouterunereservationComponent,
+    RandonneesComponent,
+    MarchebioComponent,
+    AgricultureComponent
   ],
   imports: [
     BrowserModule,
