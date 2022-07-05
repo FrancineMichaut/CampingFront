@@ -41,9 +41,8 @@ export class ReservationsComponent implements OnInit {
   console.log();
   this.campingservice.delete(id).subscribe(() => {
     console.log("reservations with id : "+id +"deleted");
-    this.bookings
-  })
-  }
+    this.bookings()     // pour rendre la suppression instantenée 
+  })}
 
   edit (r:any) {
     this.rupdate.id=r._id
@@ -62,7 +61,7 @@ export class ReservationsComponent implements OnInit {
       this.bookings();
       console.log('Vos modifications ont été effectuées');
       
-    } )
+    })
   }
 
 

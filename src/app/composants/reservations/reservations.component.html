@@ -24,3 +24,51 @@
     </div>
 
 </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+            aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="mb-3">
+                                <label class="form-label">Titre</label>
+                                <input type="text" class="form-control" name="titre" [(ngModel)]="rupdate.titre">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Type</label>
+                                <input type="text" class="form-control" name="type" [(ngModel)]="rupdate.type">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Categories</label>
+                                <input type="text" class="form-control" name="categories" [(ngModel)]="rupdate.categories">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Description</label>
+                                <input type="text" class="form-control" name="description" [(ngModel)]="rupdate.description">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Image</label>
+                                <input type="text" class="form-control" name="image" [(ngModel)]="rupdate.image">
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label">Price</label>
+                                <input type="number" class="form-control" name="price" [(ngModel)]="rupdate.price">
+                            </div>
+                        </form>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal"
+                            (click)="miseJourR()">Enregister</button>
+                    </div>
+                </div>
+            </div>
+        </div>
