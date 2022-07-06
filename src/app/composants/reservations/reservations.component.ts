@@ -9,6 +9,9 @@ import { CampingService } from 'src/app/services/camping.service';
 export class ReservationsComponent implements OnInit {
 
   reservations : any = []
+  
+  // Methode de recherche par catégories 
+    categories : any = ["Economique","Luxe", "Chic","Deluxe"]
 
   rupdate = {
     id : "",
@@ -21,7 +24,9 @@ export class ReservationsComponent implements OnInit {
   }
 
 
-
+  // message d'erreur si aucune reservation trouvée
+  errorState: boolean = false;
+  errorMessage: any;
 
   constructor (private campingservice : CampingService) { }
 
@@ -64,6 +69,32 @@ export class ReservationsComponent implements OnInit {
     })
   }
 
+  findByCategories(c:any) {
+    this.campingservice.findbycat(c).subscribe(data=>{
+      this.reservations = data
+    })
+  }
+
+  findbyprice(f:any){
+    this.campingservice.keyprice(f.min,f.max).subscribe(data=>{
+      this.reservations = data
+      
+    })
+  }
+
+
+  findbykeyword(f:any){
+    this.campingservice.getkeyword(f.keyword).subscribe(data=>{
+      if (data == "") {        
+        this.errorState = true;
+        this.errorMessage = "Aucun livre trouvé"
+      }
+
+      this.reservations = data
+      console.log(f.keyword);
+      
+    })
+  }
 
 
 
