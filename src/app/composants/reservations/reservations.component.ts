@@ -53,6 +53,7 @@ export class ReservationsComponent implements OnInit {
     this.rupdate.id=r._id
     this.rupdate.titre=r.titre
     this.rupdate.type = r.type
+    this.rupdate.categories= r.categories
     this.rupdate.description = r.description
     this.rupdate.image = r.image
     this.rupdate.price = r.price
@@ -69,32 +70,32 @@ export class ReservationsComponent implements OnInit {
     })
   }
 
-  // findByCategories(c:any) {
-  //   this.campingservice.findbycat(c).subscribe(data=>{
-  //     this.reservations = data
-  //   })
-  // }
+  findByCategories(c:any) {
+    this.campingservice.findbycat(c).subscribe(data=>{
+      this.reservations = data
+    })
+  }
 
-  // findbyprice(f:any){
-  //   this.campingservice.keyprice(f.min,f.max).subscribe(data=>{
-  //     this.reservations = data
+  findbyprice(f:any){
+    this.campingservice.keyprice(f.min,f.max).subscribe(data=>{
+      this.reservations = data
       
-  //   })
-  // }
+    })
+  }
 
 
-  // findbykeyword(f:any){
-  //   this.campingservice.getkeyword(f.keyword).subscribe(data=>{
-  //     if (data == "") {        
-  //       this.errorState = true;
-  //       this.errorMessage = "Aucun livre trouvé"
-  //     }
+  findbykeyword(f:any){
+    this.campingservice.getkeyword(f.keyword).subscribe(data=>{
+      if (data == "") {        
+        this.errorState = true;
+        this.errorMessage = "Aucun livre trouvé"
+      }
 
-  //     this.reservations = data
-  //     console.log(f.keyword);
+      this.reservations = data
+      console.log(f.keyword);
       
-  //   })
-  // }
+    })
+  }
 
 
 

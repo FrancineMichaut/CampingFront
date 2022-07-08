@@ -26,21 +26,22 @@ export class CampingService {
     return this.http.post("https://thawing-atoll-53826.herokuapp.com/campings/", reservation)   // méthode qui enregistre les modifications apportées dans la partie admin, ajouter une réservation 
   }
 
-  // findbycat(c:any){
-  //   return this.http.get("https://thawing-atoll-53826.herokuapp.com/campingsBycategories/?categories="+c)
-  // }
+  findbycat(c:any){
+    return this.http.get("https://thawing-atoll-53826.herokuapp.com/campingsByCategories?categories="+c)
+  }
 
   // // Methode rechercher par prix
-  // keyprice(min:any, max:any){
-  //   return this.http.get(`https://thawing-atoll-53826.herokuapp.com/campingsByprice?min=${min}&max=${max}`)
-  // }
+
+  keyprice(min:any, max:any){
+    return this.http.get(`https://thawing-atoll-53826.herokuapp.com/campingsByprice?min=${min}&max=${max}`)
+  }
 
 
   // // Methode rechercher par mots-clés 
 
-  // getkeyword(motcle:any){
-  //   return this.http.get("https://thawing-atoll-53826.herokuapp.com/campingsByKeyword?motCles="+motcle)
-  // }
+  getkeyword(motcle:any){
+    return this.http.get("https://thawing-atoll-53826.herokuapp.com/campingsByKeyword?motCles="+motcle)
+  }
 
 
 
