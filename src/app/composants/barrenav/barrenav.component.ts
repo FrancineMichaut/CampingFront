@@ -26,7 +26,7 @@ alertId: Boolean = false
  
     console.log(this.recupform);
     
-    if (this.recupform.Username === 'Alpha' && this.recupform.Motdepasse === '1234') {
+    if (this.recupform.Username === 'Alpha' && this.recupform.Motdepasse === '1234' || this.recupform.Username === 'Francine' && this.recupform.Motdepasse === '1234') {
       this.boutonLogin=!this.boutonLogin
       
     }
