@@ -9,6 +9,7 @@ import { CampingService } from 'src/app/services/camping.service';
 export class ReservationsComponent implements OnInit {
 
   reservations : any = []
+  pages : any  = [1,2,3];
 
   // Methode de recherche par catégories 
     categories : any = ["Economique","Luxe", "Chic","Deluxe"]
@@ -96,6 +97,19 @@ export class ReservationsComponent implements OnInit {
       
     })
   }
+
+  pagination(r:any) { console.log(r);
+  
+    this.campingservice.onpagination(r).subscribe(data=> {
+      this.reservations= data
+      
+  
+    })
+  }
+
+
+
+
 
 
 

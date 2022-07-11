@@ -43,6 +43,10 @@ export class CampingService {
     return this.http.get("https://thawing-atoll-53826.herokuapp.com/campingsByKeyword?motCles="+motcle)
   }
 
+  onpagination (page:any) {
 
+    return this.http.get(`https://thawing-atoll-53826.herokuapp.com/campings?_page=${page}&_limit=${3}`)
+    
+  }
 
 }
