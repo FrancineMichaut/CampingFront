@@ -12,6 +12,7 @@ import { AjouterunereservationComponent } from './composants/ajouterunereservati
 import { RandonneesComponent } from './composants/randonnees/randonnees.component';
 import { MarchebioComponent } from './composants/marchebio/marchebio.component';
 import { AgricultureComponent } from './composants/agriculture/agriculture.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { AgricultureComponent } from './composants/agriculture/agriculture.compo
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]
