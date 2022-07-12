@@ -32,16 +32,26 @@
                     <div class="card-body">
                         <p class="card-text fw-bold text-center fs-2">{{r.titre}}</p>
                         <p class="card-text fw-lighter text-start">{{r.type}}</p>
-                        <p class="card-text text-secondary fw-normal text-start fs-5">{{r.categories}}</p>
-                        <p class="card-text text-secondary fw-normal text-start fs-5">{{r.description}}</p>
+                        <div class="d-flex justify-content-between cursor-pointer" data-bs-toggle="collapse"
+                            data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                            <p class="card-text text-secondary fw-normal text-start fs-5 ">{{r.categories}}</p>
+                            <i class="fa-solid fa-angle-down"></i>
+                        </div>
+                        <p class="card-text text-secondary fw-normal text-start fs-5 collapse" id="collapseExample">
+                            {{r.description}}</p>
                         <p class="card-text fw-bolder fs-3 text-success">{{r.price}} &euro;</p>
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="btn-group">
+                                <button type="button" class="btn btn-sm btn-outline-success">Réserver</button>
+                            </div>
+
+                            <!-- <div class="btn-group">
                                 <button type="button" class="btn btn-sm btn-outline-danger"
                                     (click)="deleteReservation(r._id)">Delete</button>
                                 <button type="button" class="btn btn-sm btn-outline-primary" data-bs-toggle="modal"
                                     data-bs-target="#staticBackdrop" (click)="edit(r)">Editer</button>
-                            </div>
+
+                            </div> -->
                             <small class="text-muted">9 mins</small>
                         </div>
                     </div>
@@ -120,9 +130,7 @@
 
     </div>
 
-        <!---------------------------- Pagination-------------------------------------------- -->
-                <pagination-controls previousLabel="Précédent" nextLabel="Suivant"       
-                    (pageChange)="changePage($event)">
-                    </pagination-controls>
+    <!---------------------------- Pagination-------------------------------------------- -->
+    <pagination-controls previousLabel="Précédent" nextLabel="Suivant" (pageChange)="changePage($event)">
+    </pagination-controls>
 </div>
-

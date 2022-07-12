@@ -44,23 +44,23 @@ export class ReservationsComponent implements OnInit {
       })}
 
 
-  deleteReservation (id: any) {
-  console.log();
-  this.campingservice.delete(id).subscribe(() => {
-    console.log("reservations with id : "+id +"deleted");
-    this.bookings()     // pour rendre la suppression instantenée 
-  })}
+  // deleteReservation (id: any) {
+  // console.log();
+  // this.campingservice.delete(id).subscribe(() => {
+  //   console.log("reservations with id : "+id +"deleted");
+  //   this.bookings()     // pour rendre la suppression instantenée 
+  // })}
 
-  edit (r:any) {
-    this.rupdate.id=r._id
-    this.rupdate.titre=r.titre
-    this.rupdate.type = r.type
-    this.rupdate.categories= r.categories
-    this.rupdate.description = r.description
-    this.rupdate.image = r.image
-    this.rupdate.price = r.price
-    console.log(this.rupdate);
-  }
+  // edit (r:any) {
+  //   this.rupdate.id=r._id
+  //   this.rupdate.titre=r.titre
+  //   this.rupdate.type = r.type
+  //   this.rupdate.categories= r.categories
+  //   this.rupdate.description = r.description
+  //   this.rupdate.image = r.image
+  //   this.rupdate.price = r.price
+  //   console.log(this.rupdate);
+  // }
 
 
   miseJourR() {
