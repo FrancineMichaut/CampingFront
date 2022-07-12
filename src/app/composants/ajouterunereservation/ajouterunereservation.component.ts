@@ -7,7 +7,6 @@ import { CampingService } from 'src/app/services/camping.service';
   styleUrls: ['./ajouterunereservation.component.css']
 })
 export class AjouterunereservationComponent implements OnInit {
-
   reservations : any = []
 
   rupdate = {
@@ -22,32 +21,15 @@ export class AjouterunereservationComponent implements OnInit {
 
 
 
+  
+
+
+
   constructor(private campingService : CampingService) { }
 
   ngOnInit(): void {
     this.bookings()
-
   }
-
-
-
-
-  bookings() {
-    this.campingService.getBookings().subscribe( data=>{
-      this.reservations = data;
-      console.log(this.reservations);
-      
-    })}
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -62,6 +44,15 @@ saveReservation(reservation: any) {
     console.log('les données sont enregistrées');
   });
 }
+
+bookings() {
+  this.campingService.getBookings().subscribe( data=>{
+    this.reservations = data;
+    console.log(this.reservations);
+    
+  })}
+
+
 
 
 deleteReservation (id: any) {
