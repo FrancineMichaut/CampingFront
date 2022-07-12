@@ -13,6 +13,7 @@ import { RandonneesComponent } from './composants/randonnees/randonnees.componen
 import { MarchebioComponent } from './composants/marchebio/marchebio.component';
 import { AgricultureComponent } from './composants/agriculture/agriculture.component';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { TruncateWords } from './services/truncate-words.pipe';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
     AjouterunereservationComponent,
     RandonneesComponent,
     MarchebioComponent,
-    AgricultureComponent
+    AgricultureComponent,
+    TruncateWords,
   ],
   imports: [
     BrowserModule,

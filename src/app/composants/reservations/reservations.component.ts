@@ -9,7 +9,6 @@ import { CampingService } from 'src/app/services/camping.service';
 export class ReservationsComponent implements OnInit {
 
   reservations : any = []
-  // pages : any  = [1,2,3];
     // Pagination
     p: number = 1
 

@@ -14,10 +14,12 @@
 
       <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-5">
         <li class="nav-item">
-          <a class="nav-link ms-5 fs-5" href="#"><strong class="text-success">|</strong> Notre histoire <strong class="text-success">|</strong></a>
+          <a class="nav-link ms-5 fs-5" href="#"><strong class="text-success">|</strong> Notre histoire <strong
+              class="text-success">|</strong></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link ms-5 fs-5" routerLink="/reservations"><strong class="text-success">|</strong> Réservations <strong class="text-success">|</strong></a>
+          <a class="nav-link ms-5 fs-5" routerLink="/reservations"><strong class="text-success">|</strong> Réservations
+            <strong class="text-success">|</strong></a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle ms-5 fs-5" href="#" id="navbarDropdown" role="button"
@@ -35,117 +37,116 @@
         </li>
       </ul>
     </div>
- 
-
-  <!-- //////////////////////////////////////Partie administrateur////////////////////////////////////////////// -->
 
 
-  <div class="col-2 ms-5">
+    <!-- //////////////////////////////////////Partie administrateur////////////////////////////////////////////// -->
 
 
-    <ul class="navbar-nav me-auto ms-3 mb-lg-2">
-
-      <li class="nav-item dropdown">
-
-        <a class="btn btn-light nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
-          aria-expanded="false" *ngIf="boutonLogin"
-          >
-          Administrateur
-        </a>
-        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-
-          <li>
-            <hr class="dropdown-divider">
-          </li>
-
-<!-- µµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµ à rajouter plus tard peut êtreppppppppppppppppppppppppppppppppppppppppppppppp -->
+    <div class="col-2 ms-5">
 
 
-          <!-- <li><a class="dropdown-item" routerLink="/reservations">Gestion des réservations</a>
+      <ul class="navbar-nav me-auto ms-3 mb-lg-2">
+
+        <li class="nav-item dropdown">
+
+          <a class="btn btn-light nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+            aria-expanded="false" *ngIf="boutonLogin">
+            Administrateur
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <!-- µµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµ à rajouter plus tard peut êtreppppppppppppppppppppppppppppppppppppppppppppppp -->
+
+
+            <!-- <li><a class="dropdown-item" routerLink="/reservations">Gestion des réservations</a>
           </li> -->
-          <li><a class="dropdown-item" routerLink="/ajouterunereservation">Réservation +</a>
-          </li>
-        </ul>
-      </li>
-    </ul>
+            <li><a class="dropdown-item" routerLink="/ajouterunereservation">Réservation +</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
 
 
 
 
-  </div>
+    </div>
 
 
 
 
 
 
-  <!-- message d'alert a déclancher si le username et le motdepasse sont incorrect -->
+    <!-- message d'alert a déclancher si le username et le motdepasse sont incorrect -->
 
-  <div class="alert alert-primary" *ngIf="alertId" role="alert">
-    Votre nom et/ou mot de passe est incorrect
-  </div>
-
-
-
-  <!-- début modal pour login avec formulaire: username et mot de passe -->
-
-
-  <!-- Button trigger modal -->
-  <div class="d-grid me-5">
-
-    <button type="button" class="btn btn-light succes" data-bs-toggle="modal" data-bs-target="#exampleModal"
-      *ngIf="!boutonLogin">
-      Login
-    </button>
-    
-  </div>
+    <div class="alert alert-primary" *ngIf="alertId" role="alert">
+      Votre nom et/ou mot de passe est incorrect
+    </div>
 
 
 
-  <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Identification</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
+    <!-- début modal pour login avec formulaire: username et mot de passe -->
+
+
+    <!-- Button trigger modal -->
+    <div class="d-grid me-5">
+
+      <button type="button" class="btn btn-light succes" data-bs-toggle="modal" data-bs-target="#exampleModal"
+        *ngIf="!boutonLogin">
+        Login
+      </button>
+
+    </div>
 
 
 
-          <!-- ***************************************FORMULAIRE************************************************* -->
-          <form #f="ngForm">
-            <div class="mb-3">
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Identification</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
 
+
+
+            <!-- ***************************************FORMULAIRE************************************************* -->
+            <form #f="ngForm">
               <div class="mb-3">
-                <label for="disabledTextInput" class="form-label">Username</label>
-                <input type="text" name="Username"  [(ngModel)]="recupform.Username" class="form-control"
+
+                <div class="mb-3">
+                  <label for="disabledTextInput" class="form-label">Username</label>
+                  <input type="text" name="Username" [(ngModel)]="recupform.Username" class="form-control"
+                    placeholder="..." ngModel requiered>
+                </div>
+
+                <label for="disabledTextInput" class="form-label">Mot de passe</label>
+                <input type="any" name="Motdepasse" [(ngModel)]="recupform.Motdepasse" class="form-control"
                   placeholder="..." ngModel requiered>
+
               </div>
 
-              <label for="disabledTextInput" class="form-label">Mot de passe</label>
-              <input type="any" name="Motdepasse" [(ngModel)]="recupform.Motdepasse" class="form-control"
-                placeholder="..." ngModel requiered>
-
-            </div>
 
 
 
+              <div class="modal-footer">
+                <button type="submit" class="btn btn-primary" data-bs-dismiss="modal"
+                  (click)="validate()">Valider</button>
 
-            <div class="modal-footer">
-              <button type="submit" class="btn btn-primary" data-bs-dismiss="modal"
-                (click)="validate()">Valider</button>
-
-            </div>
+              </div>
 
 
 
 
 
-          </form>
+            </form>
 
-          <!-- *******************************Fin formulaire*********************** -->
+            <!-- *******************************Fin formulaire*********************** -->
 
 
 
@@ -158,19 +159,14 @@
 
 
 
-        
-          <!-- **********************************************Fin nav barre********************************************* -->
+
+            <!-- **********************************************Fin nav barre********************************************* -->
 
 
 
-</div>
-</div>
+          </div>
         </div>
-     </div>
-        </div>
-        </nav>
-
-
-
-
-        
+      </div>
+    </div>
+  </div>
+</nav>

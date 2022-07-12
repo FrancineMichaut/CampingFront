@@ -1,5 +1,4 @@
 <div>
-
     <!-- <--------------------------Chercher par catégories ----------------------------------------->
     <div class="row text-center">
         <div class="col-md-2 pt-5 col-sm-2 cat">
@@ -26,17 +25,15 @@
         <!-- --------------------------------- -->
 
 
-
-
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 bg-secondary bg-gradient">
             <div class="col" *ngFor="let r of reservations | paginate : { itemsPerPage: 3, currentPage: p}">
                 <div class="card shadow-sm">
                     <img class="card-img-top img-fluid" width="100%" height="225px" src="{{r.image}}" alt="">
                     <div class="card-body">
                         <p class="card-text fw-bold text-center fs-2">{{r.titre}}</p>
-                        <p class="card-text fw-lighter text-end ">{{r.type}}</p>
-                        <p class="card-text text-end text-secondary fw-normal fs-5">{{r.categories}}</p>
-                        <p class="card-text text-end text-secondary fw-normal fs-5">{{r.description}}</p>
+                        <p class="card-text fw-lighter text-start">{{r.type}}</p>
+                        <p class="card-text text-secondary fw-normal text-start fs-5">{{r.categories}}</p>
+                        <p class="card-text text-secondary fw-normal text-start fs-5">{{r.description}}</p>
                         <p class="card-text fw-bolder fs-3 text-success">{{r.price}} &euro;</p>
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="btn-group">
