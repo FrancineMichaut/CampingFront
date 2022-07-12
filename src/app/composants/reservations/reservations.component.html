@@ -1,70 +1,44 @@
-
-
-<div class="container">
-    <div class="row">
+<!-- **********************************************************Methode Chercher par prix************************** -->
+<div class="container mt-5">
+    <div class="row ">
         <div class="col-6">
             <form class="row form-inline" #pr="ngForm">
                 <div class="col-4">
-                    <input type="number" class="form-control" name="min" ngModel placeholder="min ..." value="min">
+                    <input type="number" class="form-control" name="min" ngModel placeholder="Prix min ..." value="min">
                 </div>
-                <div class="col-4"> <input type="number" class="form-control" name="max" ngModel placeholder="max ..."
+                <div class="col-4"> <input type="number" class="form-control" name="max" ngModel placeholder="Prix max ..."
                         value="max">
                 </div>
-    
-                <button type="submit" (click)="findbyprice(pr.value)" class="col-auto btn btn-primary mb-2">Chercher par
-                    prix</button>
+                <button type="submit" (click)="findbyprice(pr.value)" class="col-auto btn btn-danger bg-gradient opacity-75 mb-2 border- rounded-circle 50"><i class="fa-solid fa-magnifying-glass-dollar text-warning fa-xl"></i></button>
             </form>
         </div>
-    
-    
-    
-    
-        
-    
-    
-    
     </div>
     
 </div>
 
-
-
-
-
-
-
-
-
-
-
-
-<!-- µµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµ -->
-
-
-
-
-
-
+<!-- µµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµ µµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµ -->
 
 <div class="row ">
-
+<!-- **********************************************Chercher par Catégories******************************************** -->
     <div class="col-1 pt-5 col-sm-2 cat">
-        <div class=" border-start opacity-75 " *ngFor="let c of categories">
-            <button class="btn bg-warning bg-gradient  mt-2 w-50" (click)=" findByCategories(c)">{{c}}</button>
+        <div class=" border-start opacity-75 w-75"  *ngFor="let c of categories">
+            <button class="btn bg-warning bg-gradient mt-2 w-50" (click)=" findByCategories(c)">{{c}}</button>
         </div>
+
+<!-- **********************************************Chercher par mots clés******************************************** -->
         <div class="col-md-6 col-sm-2 mt-5">
             <form class="row form-inline" (ngSubmit)="findbykeyword(f.value)" #f="ngForm">
                 <div class="">
-                    <input type="text" class="form-control" name="keyword" ngModel placeholder="mot cle ...">
+                    <input type="text" class="form-control" name="keyword" ngModel placeholder="par mot clé ...">
                 </div>
-                <button type="submit" class="btn btn-primary">Chercher par mot cle ...</button>
+                <button type="submit" class="btn"><i class="fa-solid fa-magnifying-glass text-warning -fa-2xl"></i></button>
             </form>
         </div>
     
     </div>
 
-
-    <div class="col" *ngFor="let r of reservations | paginate : { itemsPerPage: 3, currentPage: p}">
+<!-- ******************************************** les produits (campings)************************************************-->
+    <div class="col bg-secondary bg-gradient" *ngFor="let r of reservations | paginate : { itemsPerPage: 3, currentPage: p}">
         <div class="card shadow-sm">
             <img class="card-img-top img-fluid" width="100%" height="225px" src="{{r.image}}" alt="">
             <div class="card-body">
@@ -87,16 +61,16 @@
 
 
 
-                    <!-- ************************************************Formulaire dans bouton réserver************************************ -->
+                    <!-- **************************Formulaire dans bouton réserver************************************ -->
 
 
 
 
-                    <!-- ***************MODaL *********** -->
 
 
 
-                    <!-- Modal -->
+
+                <!--******************************MODaL ************************************************************ -->
                     <div class="modal fade" id="exModal" tabindex="-1" aria-labelledby="exampleModalLabel"
                         aria-hidden="true">
                         <div class="modal-dialog">
@@ -106,12 +80,12 @@
 
                                     <div class="row">
                                         <div class="col-6">
-                                            <strong> Le nom de bangalow : </strong><small>{{reservation.titre}}</small>
+                                            <strong> Le nom du bungalow : </strong><small>{{reservation.titre}}</small>
                                             <br>
-                                            <strong> Le prix de bangalow : </strong><small>{{reservation.price}}</small>
+                                            <strong> Le prix du bungalow : </strong><small>{{reservation.price}}</small>
                                         </div>
                                         <div class="col-6">
-                                            <strong> Le type de bangalow :
+                                            <strong> Le type de bungalow :
                                             </strong><small>{{reservation.type}}</small><br>
                                         </div>
                                     </div>
@@ -124,7 +98,7 @@
 
 
 
-                                    <!-- ***************************************FORMULAIRE************************************************* -->
+            <!-- ***************************************FORMULAIRE************************************************* -->
                                     <form (ngSubmit)="addBook(f.value)" #f="ngForm">
                                         <div class="mb-3">
 
@@ -151,7 +125,7 @@
                                                 data-bs-dismiss="modal">Fermer</button>
                                             <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Save
                                                 Book !</button>
-                                            <!-- booking, méthode create qui ajoute un objet entièrement dans la base de donnée json, dans le deuxième tableau : réseravtions -->
+                                            <!-- addBook, méthode create qui ajoute un objet entièrement dans la base de donnée, dans le deuxième tableau : réseravtions -->
                                         </div>
 
 
@@ -175,19 +149,8 @@
 
 </div>
 
-
-
-
-
-
-
-
-
-
-
-
 <!---------------------------- Pagination-------------------------------------------- -->
-<pagination-controls previousLabel="Précédent" nextLabel="Suivant" (pageChange)="changePage($event)">
+<pagination-controls class=" pagination-controls fw-bold fs-6 fst-italic text-secondary bg-gradient" previousLabel="Précédent" nextLabel="Suivant" (pageChange)="changePage($event)">
 </pagination-controls>
 
 

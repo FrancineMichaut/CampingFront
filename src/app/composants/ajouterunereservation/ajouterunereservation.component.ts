@@ -20,20 +20,11 @@ export class AjouterunereservationComponent implements OnInit {
   }
 
 
-
-  
-
-
-
   constructor(private campingService : CampingService) { }
 
   ngOnInit(): void {
     this.bookings()
   }
-
-
-
-
 
 
 

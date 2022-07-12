@@ -1,3 +1,11 @@
 .cursor-pointer {
     cursor: pointer;
 }
+
+.pagination-controls {
+    text-align: center !important;
+}
+
+.border-start{
+    text-align: center !important;
+}
