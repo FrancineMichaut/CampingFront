@@ -12,6 +12,32 @@ export class ReservationsComponent implements OnInit {
     // Pagination
     p: number = 1
 
+  bookcamp :any ={
+    titre:"",
+    type:"",
+    image :"",
+    price:"",
+      // algo a faire calcul
+      totalPrice: '',
+      dateArrivee:'',
+      nomClient:'',
+      nombreDeNuits:''
+  }
+
+
+
+    reservation: any = {
+      id : "",
+    titre:"",
+    type:"",
+    categories :"",
+    description :"",
+    image :"",
+    price:"",
+      // algo a faire calcul
+      totalPrice: '',
+    };
+
   // Methode de recherche par catégories 
     categories : any = ["Economique","Luxe", "Chic","Deluxe"]
 
@@ -108,9 +134,26 @@ changePage($event : any) {
 
 
 
+  recupInfoReservation(r: any) {
+    this.reservation = r
+    console.log(this.reservation.titre);
+  }
 
 
+  addBook(f: any) {
+    this.bookcamp.titre =  this.reservation.titre
+    this.bookcamp.type =  this.reservation.type
+    // this.bookcamp.description =  this.reservation.description
+    this.bookcamp.price =  this.reservation.price
+    this.bookcamp.dateArrivee = f.date
+    this.bookcamp.nomClient = f.nom
+    this.bookcamp.nombreDeNuits = f.nombreDeNuit
 
+
+    console.log("ma reservation : ", this.bookcamp);
+    
+
+  }
 
 
 

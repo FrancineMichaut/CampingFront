@@ -43,6 +43,27 @@ export class CampingService {
     return this.http.get("https://thawing-atoll-53826.herokuapp.com/campingsByKeyword?motCles="+motcle)
   }
 
-  
+
+
+
+
+
+
+
+  create(formulaire:any){
+    return this.http.get("https://thawing-atoll-53826.herokuapp.com/campings/",formulaire)       // méthode qui récupère les données du formulaire dans le bouton réserver et qui les rajoutent (qui créé) un nouvel oblet dans Jsonp, tableau "reservations" 
+  }
+
+
+
+
+
+
+
+
+
+
+
+
 
 }
