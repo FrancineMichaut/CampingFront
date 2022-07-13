@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { CampingService } from 'src/app/services/camping.service';
 
 @Component({
@@ -7,7 +8,7 @@ import { CampingService } from 'src/app/services/camping.service';
   styleUrls: ['./reservations.component.css']
 })
 export class ReservationsComponent implements OnInit {
-
+  paiment :boolean = false
   reservations : any = []
     // Pagination
     p: number = 1
@@ -56,7 +57,7 @@ export class ReservationsComponent implements OnInit {
   errorState: boolean = false;
   errorMessage: any;
 
-  constructor (private campingservice : CampingService) { }
+  constructor (private campingservice : CampingService, private router:Router) { }
 
   ngOnInit(): void {
     this.bookings()
@@ -152,8 +153,29 @@ changePage($event : any) {
 
     console.log("ma reservation : ", this.bookcamp);
     
-
+    this.paiment = true
   }
+
+
+  // envoiInfoReservation(r){
+
+  // }
+
+
+
+
+  finalCommande(){
+    console.log(".... atat ", this.bookcamp);
+    
+    this.campingservice.saveBook(this.bookcamp).subscribe(data=>{
+      console.log("success ... !");
+      
+    })
+    this.router.navigate(['/gestiondesreservations']);
+  }
+
+
+
 
 
 

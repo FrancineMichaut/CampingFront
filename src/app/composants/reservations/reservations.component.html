@@ -1,67 +1,73 @@
 <!-- **********************************************************Methode Chercher par prix************************** -->
-<div class="container mt-5">
+<div class="container mt-5 shadow-lg p-3 mb-5 bg-body rounded">
     <div class="row ">
         <div class="col-6">
+
+
+
+
+
+
             <form class="row form-inline" #pr="ngForm">
                 <div class="col-4">
                     <input type="number" class="form-control" name="min" ngModel placeholder="Prix min ..." value="min">
                 </div>
-                <div class="col-4"> <input type="number" class="form-control" name="max" ngModel placeholder="Prix max ..."
-                        value="max">
+                <div class="col-4"> <input type="number" class="form-control" name="max" ngModel
+                        placeholder="Prix max ..." value="max">
                 </div>
-                <button type="submit" (click)="findbyprice(pr.value)" class="col-auto btn btn-secondary bg-gradient opacity-75 mb-2 border- rounded-circle 50"><i class="fa-solid fa-magnifying-glass-dollar text-warning fa-xl"></i></button>
+                <button type="submit" (click)="findbyprice(pr.value)"
+                    class="col-auto btn btn-secondary bg-gradient opacity-75 mb-2 border- rounded-circle 50"><i
+                        class="fa-solid fa-magnifying-glass-dollar text-warning fa-xl"></i></button>
             </form>
-        </div>
-    </div>
-    
-</div>
 
-<!-- µµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµ µµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµ -->
 
-<div class="row ">
-<!-- **********************************************Chercher par Catégories******************************************** -->
-    <div class="col-1 pt-5 col-sm-2 cat">
-        <div class=" border-start opacity-75 w-75"  *ngFor="let c of categories">
-            <button class="btn bg-warning bg-gradient mt-2 w-50" (click)=" findByCategories(c)">{{c}}</button>
-        </div>
 
-<!-- **********************************************Chercher par mots clés******************************************** -->
-        <div class="col-md-6 col-sm-2 mt-5">
-            <form class="row form-inline" (ngSubmit)="findbykeyword(f.value)" #f="ngForm">
-                <div class="">
-                    <input type="text" class="form-control" name="keyword" ngModel placeholder="par mot clé ...">
+
+            <!-- **********************************************Chercher par Catégories******************************************** -->
+            <div class="d-flex flex-row mb-3">
+                <div class=" border-start opacity-75 " *ngFor="let c of categories">
+                    <button class="btn bg-warning bg-gradient mt-2 w-50" (click)=" findByCategories(c)">{{c}}</button>
                 </div>
-                <button type="submit" class="btn"><i class="fa-solid fa-magnifying-glass text-warning -fa-2xl"></i></button>
-            </form>
+
+
+                <!-- **Chercher par mots clés** -->
+                <div class="col-md-6 col-sm-2 mt-5">
+                    <form class="row form-inline" (ngSubmit)="findbykeyword(f.value)" #f="ngForm">
+                        <div class="">
+                            <input type="text" class="form-control" name="keyword" ngModel
+                                placeholder="par mot clé ...">
+                        </div>
+                        <button type="submit" class="btn"><i
+                                class="fa-solid fa-magnifying-glass text-warning -fa-2xl"></i></button>
+                    </form>
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </div>
         </div>
-    
+
     </div>
 
-<!-- ******************************************** les produits (campings)************************************************-->
-    <div class="col bg-secondary bg-gradient" *ngFor="let r of reservations | paginate : { itemsPerPage: 3, currentPage: p}">
-        <div class="card shadow-sm">
-            <img class="card-img-top img-fluid" width="100%" height="225px" src="{{r.image}}" alt="">
-            <div class="card-body">
-                <p class="card-text fw-bold text-center fs-2">{{r.titre}}</p>
-                <p class="card-text fw-lighter text-start">{{r.type}}</p>
-                <div class="d-flex justify-content-between cursor-pointer" data-bs-toggle="collapse"
-                    data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-                    <p class="card-text text-secondary fw-normal text-start fs-5 ">{{r.categories}}</p>
-                    <i class="fa-solid fa-angle-down"></i>
-                </div>
-                <p class="card-text text-secondary fw-normal text-start fs-5 collapse" id="collapseExample">
-                    {{r.description}}</p>
-                <p class="card-text fw-bolder fs-3 text-success">{{r.price}} &euro;</p>
-                <div class="d-flex justify-content-between align-items-center">
-                    <!-- Button trigger modal -->
-                    <button type="button" class="btn btn-outline-primary" id="exampleModal"
-                        (click)="recupInfoReservation(r)" data-bs-toggle="modal" data-bs-target="#exModal">
-                        Réserver
-                    </button>
+    <!-- µµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµ µµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµ -->
 
-
-
-                    <!-- **************************Formulaire dans bouton réserver************************************ -->
+    <div class="row bg-secondary pt-5 shadow-lg p-3 mb-5 bg-body rounded ">
 
 
 
@@ -70,98 +76,408 @@
 
 
 
-                <!--******************************MODaL ************************************************************ -->
-                    <div class="modal fade" id="exModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                        aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
+        <!-- ******************************************** les produits (campings)************************************************-->
+        <div class="col bg-secondary  me-4  ms-3 h-100 mb-4"
+            *ngFor="let r of reservations | paginate : { itemsPerPage: 3, currentPage: p}">
+            <div class="card shadow-sm">
+                <img class="card-img-top img-fluid" width="100%" height="225px" src="{{r.image}}" alt="">
+                <div class="card-body">
+                    <p class="card-text fw-bold text-center fs-2">{{r.titre}}</p>
+                    <p class="card-text fw-lighter text-start">{{r.type}}</p>
+                    <div class="d-flex justify-content-between cursor-pointer" data-bs-toggle="collapse"
+                        data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                        <p class="card-text text-secondary fw-normal text-start fs-5 ">{{r.categories}}</p>
+                        <i class="fa-solid fa-angle-down"></i>
+                    </div>
+                    <p class="card-text text-secondary fw-normal text-start fs-5 collapse" id="collapseExample">
+                        {{r.description}}</p>
+                    <p class="card-text fw-bolder fs-3 text-success">{{r.price}} &euro;</p>
+                    <div class="d-flex justify-content-between align-items-center">
 
 
-                                    <div class="row">
-                                        <div class="col-6">
-                                            <strong> Le nom du bungalow : </strong><small>{{reservation.titre}}</small>
-                                            <br>
-                                            <strong> Le prix du bungalow : </strong><small>{{reservation.price}}</small>
+                        <!-- Button trigger modal -->
+                        <button type="submit" class="btn btn-outline-primary" id="exampleModal"
+                            (click)="recupInfoReservation(r)" data-bs-toggle="modal" data-bs-target="#exModal">
+                            Réserver
+                        </button>
+
+
+                        <!--******************************MODaL ************************************************************ -->
+                        <div class="modal fade" id="exModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+
+
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <strong> Le nom du bungalow :
+                                                </strong><small>{{reservation.titre}}</small>
+                                                <br>
+                                                <strong> Le prix du bungalow :
+                                                </strong><small>{{reservation.price}}</small>
+                                            </div>
+                                            <div class="col-6">
+                                                <strong> Le type de bungalow :
+                                                </strong><small>{{reservation.type}}</small><br>
+                                            </div>
                                         </div>
-                                        <div class="col-6">
-                                            <strong> Le type de bungalow :
-                                            </strong><small>{{reservation.type}}</small><br>
-                                        </div>
+
+
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
                                     </div>
+                                    <div class="modal-body">
 
+                                        <!-- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^Formulaire de paiement^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ -->
 
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                        aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
+                                        <div *ngIf="paiment">
 
+                                            <div class="container">
+                                                <div class="row">
+                                                    <div class="col-lg-4 mb-lg-0 mb-3">
+                                                        <div class="card p-3">
+                                                            <div class="img-box">
+                                                                <img src="https://www.freepnglogos.com/uploads/visa-logo-download-png-21.png"
+                                                                    alt="">
+                                                            </div>
+                                                            <div class="number">
+                                                                <label class="fw-bold" for="">**** **** ****
+                                                                    1060</label>
+                                                            </div>
+                                                            <div
+                                                                class="d-flex align-items-center justify-content-between">
+                                                                <small><span class="fw-bold">Expiry
+                                                                        date:</span><span>10/16</span></small>
 
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-4 mb-lg-0 mb-3">
+                                                        <div class="card p-3">
+                                                            <div class="img-box">
+                                                                <img src="https://www.freepnglogos.com/uploads/mastercard-png/file-mastercard-logo-svg-wikimedia-commons-4.png"
+                                                                    alt="">
+                                                            </div>
+                                                            <div class="number">
+                                                                <label class="fw-bold">**** **** **** 1060</label>
+                                                            </div>
+                                                            <div
+                                                                class="d-flex align-items-center justify-content-between">
+                                                                <small><span class="fw-bold">Expiry
+                                                                        date:</span><span>10/16</span></small>
 
-            <!-- ***************************************FORMULAIRE************************************************* -->
-                                    <form (ngSubmit)="addBook(f.value)" #f="ngForm">
-                                        <div class="mb-3">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-4 mb-lg-0 mb-3">
+                                                        <div class="card p-3">
+                                                            <div class="img-box">
+                                                                <img src="https://www.freepnglogos.com/uploads/discover-png-logo/credit-cards-discover-png-logo-4.png"
+                                                                    alt="">
+                                                            </div>
+                                                            <div class="number">
+                                                                <label class="fw-bold">**** **** **** 1060</label>
+                                                            </div>
+                                                            <div
+                                                                class="d-flex align-items-center justify-content-between">
+                                                                <small><span class="fw-bold">Expiry
+                                                                        date:</span><span>10/16</span></small>
 
-                                            <div class="mb-3">
-                                                <label for="disabledTextInput" class="form-label">Nom</label>
-                                                <input type="text" name="nom" class="form-control" placeholder="..."
-                                                    ngModel requiered>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12 mt-4">
+                                                        <div class="card p-3">
+                                                            <p class="mb-0 fw-bold h4">Payment Methods</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <div class="card p-3">
+                                                            <div class="card-body border p-0">
+                                                                <p>
+                                                                    <a class="btn btn-primary w-100 h-100 d-flex align-items-center justify-content-between"
+                                                                        data-bs-toggle="collapse"
+                                                                        href="#collapseExample" role="button"
+                                                                        aria-expanded="true"
+                                                                        aria-controls="collapseExample">
+                                                                        <span class="fw-bold">PayPal</span>
+                                                                        <span class="fab fa-cc-paypal">
+                                                                        </span>
+                                                                    </a>
+                                                                </p>
+                                                                <div class="collapse p-3 pt-0" id="collapseExample">
+                                                                    <div class="row">
+                                                                        <div class="col-8">
+                                                                            <p class="h4 mb-0">Summary</p>
+                                                                            <p class="mb-0"><span
+                                                                                    class="fw-bold">Product:</span><span
+                                                                                    class="c-green">: Name of
+                                                                                    product</span></p>
+                                                                            <p class="mb-0"><span
+                                                                                    class="fw-bold">Price:</span><span
+                                                                                    class="c-green">:$452.90</span></p>
+                                                                            <p class="mb-0">Lorem ipsum, dolor sit amet
+                                                                                consectetur adipisicing elit. Atque
+                                                                                nihil neque
+                                                                                quisquam aut
+                                                                                repellendus, dicta vero? Animi dicta
+                                                                                cupiditate, facilis provident quibusdam
+                                                                                ab
+                                                                                quis,
+                                                                                iste harum ipsum hic, nemo qui!</p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="card-body border p-0">
+                                                                <p>
+                                                                    <a class="btn btn-primary p-2 w-100 h-100 d-flex align-items-center justify-content-between"
+                                                                        data-bs-toggle="collapse"
+                                                                        href="#collapseExample" role="button"
+                                                                        aria-expanded="true"
+                                                                        aria-controls="collapseExample">
+                                                                        <span class="fw-bold">Credit Card</span>
+                                                                        <span class="">
+                                                                            <span class="fab fa-cc-amex"></span>
+                                                                            <span class="fab fa-cc-mastercard"></span>
+                                                                            <span class="fab fa-cc-discover"></span>
+                                                                        </span>
+                                                                    </a>
+                                                                </p>
+                                                                <div class="collapse show p-3 pt-0"
+                                                                    id="collapseExample">
+                                                                    <div class="row">
+                                                                        <div class="col-lg-5 mb-lg-0 mb-3">
+                                                                            <p class="h4 mb-0">Summary</p>
+                                                                            <p class="mb-0"><span
+                                                                                    class="fw-bold">Product:</span><span
+                                                                                    class="c-green">: Name of
+                                                                                    product</span>
+                                                                            </p>
+                                                                            <p class="mb-0">
+                                                                                <span class="fw-bold">Price:</span>
+                                                                                <span class="c-green">:$452.90</span>
+                                                                            </p>
+                                                                            <p class="mb-0">Lorem ipsum, dolor sit amet
+                                                                                consectetur adipisicing elit. Atque
+                                                                                nihil neque
+                                                                                quisquam aut
+                                                                                repellendus, dicta vero? Animi dicta
+                                                                                cupiditate, facilis provident quibusdam
+                                                                                ab
+                                                                                quis,
+                                                                                iste harum ipsum hic, nemo qui!</p>
+                                                                        </div>
+                                                                        <div class="col-lg-7">
+                                                                            <form action="" class="form">
+                                                                                <div class="row">
+                                                                                    <div class="col-12">
+                                                                                        <div class="form__div">
+                                                                                            <input type="text"
+                                                                                                class="form-control"
+                                                                                                placeholder=" ">
+                                                                                            <label for=""
+                                                                                                class="form__label">Card
+                                                                                                Number</label>
+                                                                                        </div>
+                                                                                    </div>
+
+                                                                                    <div class="col-6">
+                                                                                        <div class="form__div">
+                                                                                            <input type="text"
+                                                                                                class="form-control"
+                                                                                                placeholder=" ">
+                                                                                            <label for=""
+                                                                                                class="form__label">MM /
+                                                                                                yy</label>
+                                                                                        </div>
+                                                                                    </div>
+
+                                                                                    <div class="col-6">
+                                                                                        <div class="form__div">
+                                                                                            <input type="password"
+                                                                                                class="form-control"
+                                                                                                placeholder=" ">
+                                                                                            <label for=""
+                                                                                                class="form__label">cvv
+                                                                                                code</label>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="col-12">
+                                                                                        <div class="form__div">
+                                                                                            <input type="text"
+                                                                                                class="form-control"
+                                                                                                placeholder=" ">
+                                                                                            <label for=""
+                                                                                                class="form__label">name
+                                                                                                on the card</label>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="col-12">
+                                                                                        <div
+                                                                                            class="btn btn-primary w-100">
+                                                                                            Sumbit</div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </form>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <div class="btn btn-primary payment" (click)="finalCommande()">
+                                                            Make Payment
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
 
-                                            <label for="disabledTextInput" class="form-label">Date d'arrivée</label>
-                                            <input id="datedarrivee" type="date" name="date" class="form-control"
-                                                placeholder="..." ngModel requiered>
+
+
+
+
+
+
+
+
+
+
+
+
                                         </div>
 
-                                        <div class="mb-3">
-                                            <label for="disabledTextInput" class="form-label">Nombre de nuits
-                                                réservées</label>
-                                            <input type="number" name="nombreDeNuit" class="form-control"
-                                                placeholder="..." ngModel requiered>
-                                        </div>
+                                        <!-- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^Fin Formuulaire de paiement^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ -->
 
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary"
-                                                data-bs-dismiss="modal">Fermer</button>
-                                            <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Save
-                                                Book !</button>
+
+                                        <!-- ***************************************FORMULAIRE************************************************* -->
+                                        <form (ngSubmit)="addBook(f.value)" #f="ngForm" *ngIf="!paiment">
+                                            <div class="mb-3">
+
+                                                <div class="mb-3">
+                                                    <label for="disabledTextInput" class="form-label">Nom</label>
+                                                    <input type="text" name="nom" class="form-control" placeholder="..."
+                                                        ngModel requiered>
+                                                </div>
+
+                                                <label for="disabledTextInput" class="form-label">Date d'arrivée</label>
+                                                <input id="datedarrivee" type="date" name="date" class="form-control"
+                                                    placeholder="..." ngModel requiered>
+                                            </div>
+
+                                            <div class="mb-3">
+                                                <label for="disabledTextInput" class="form-label">Nombre de nuits
+                                                    réservées</label>
+                                                <input type="number" name="nombreDeNuit" class="form-control"
+                                                    placeholder="..." ngModel requiered>
+                                            </div>
+
+                                            <div class="modal-footer">
+                                                <button type="submit" class="btn btn-secondary">Payer</button>
+
+
+                                                <!-- ********************************************bouton tigger Payer et formualire de paiement****************************/ -->
+
+
+                                                <!-- Button trigger modal -->
+                                                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                                    data-bs-target="#exampModal" *ngIf="paiment">
+                                                    finis le paiment Payer
+                                                </button>
+                                            </div>
+                                            <!-- Modal -->
+                                            <div class="modal fade" id="exampModal" tabindex="-1"
+                                                aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="exampleModal">Modal title</h5>
+                                                            <button type="button" class="btn-close"
+                                                                data-bs-dismiss="modal" aria-label="Close"></button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <!-- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^Formulaire de paiement^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ -->
+
+                                                            <form>
+                                                                <div class="mb-3">
+                                                                    <label for="exampleInputEmail1"
+                                                                        class="form-label">Email address</label>
+                                                                    <input type="email" class="form-control"
+                                                                        id="exampleInputEmail1"
+                                                                        aria-describedby="emailHelp">
+                                                                    <div id="emailHelp" class="form-text">We'll never
+                                                                        share your email with anyone else.</div>
+                                                                </div>
+                                                                <div class="mb-3">
+                                                                    <label for="exampleInputPassword1"
+                                                                        class="form-label">Password</label>
+                                                                    <input type="password" class="form-control"
+                                                                        id="exampleInputPassword1">
+                                                                </div>
+                                                                <div class="mb-3 form-check">
+                                                                    <input type="checkbox" class="form-check-input"
+                                                                        id="exampleCheck1">
+                                                                    <label class="form-check-label"
+                                                                        for="exampleCheck1">Check me out</label>
+                                                                </div>
+                                                                <button type="submit"
+                                                                    class="btn btn-primary">Submit</button>
+                                                            </form>
+
+                                                            <!-- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^Fin Formuulaire de paiement^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ -->
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-secondary"
+                                                                data-bs-dismiss="modal">Close</button>
+                                                            <button type="button" class="btn btn-primary">Save
+                                                                changes</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+
+
+
+                                            <!-- ********************************************FIN bouton tigger save book et formualire de paiement****************************/ -->
+
+
+
+
+
+
+                                            <!-- <button type="submit" class="btn btn-primary" data-bs-dismiss="modal"
+                                                (click)="envoiInfoReservation(r)">Save
+                                                Book !</button> -->
                                             <!-- addBook, méthode create qui ajoute un objet entièrement dans la base de donnée, dans le deuxième tableau : réseravtions -->
-                                        </div>
 
 
-                                    </form>
 
-                                    <!-- *******************************Fin formulaire*********************** -->
+                                        </form>
+
+                                        <!-- *******************************Fin formulaire*********************** -->
+                                    </div>
+
                                 </div>
-
                             </div>
+
+                            <!-- ***************méthode  delete avec id de chambre en paramètre*********** -->
+                            <!-- <p class="btn btn-outline-danger ms-3 mb-0" (click)="delete(c.id)">delete</p> -->
                         </div>
 
-                        <!-- ***************méthode  delete avec id de chambre en paramètre*********** -->
-                        <!-- <p class="btn btn-outline-danger ms-3 mb-0" (click)="delete(c.id)">delete</p> -->
+
                     </div>
-
-
                 </div>
             </div>
         </div>
+
     </div>
 
-</div>
-
-<!---------------------------- Pagination-------------------------------------------- -->
-<pagination-controls class=" pagination-controls fw-bold fs-6 fst-italic text-secondary bg-gradient" previousLabel="Précédent" nextLabel="Suivant" (pageChange)="changePage($event)">
-</pagination-controls>
-
-
-
-
-
-
-
-
-
-
-
-
-
+    <!---------------------------- Pagination-------------------------------------------- -->
+    <pagination-controls class=" pagination-controls fw-bold fs-6 fst-italic text-secondary bg-gradient"
+        previousLabel="Précédent" nextLabel="Suivant" (pageChange)="changePage($event)">
+    </pagination-controls>
