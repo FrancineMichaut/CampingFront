@@ -1,16 +1,17 @@
 <!-- **********************************************************Methode Chercher par prix************************** -->
-<div class="container mt-5 shadow-lg p-3 mb-5 bg-body rounded">
+<div class="container mt-5  p-3 mb-5 bg-body rounded ">
     <div class="row ">
-        <div class="col-6">
+        <div class="col-9">
 
 
 
 
 
 
-            <form class="row form-inline" #pr="ngForm">
+            <form class="row form-inline ms-5" #pr="ngForm">
                 <div class="col-4">
-                    <input type="number" class="form-control" name="min" ngModel placeholder="Prix min ..." value="min">
+                    <input type="number" class="form-control " name="min" ngModel placeholder="Prix min ..."
+                        value="min">
                 </div>
                 <div class="col-4"> <input type="number" class="form-control" name="max" ngModel
                         placeholder="Prix max ..." value="max">
@@ -25,14 +26,13 @@
 
             <!-- **********************************************Chercher par Catégories******************************************** -->
             <div class="d-flex flex-row mb-3">
-                <div class=" border-start opacity-75 " *ngFor="let c of categories">
-                    <button class="btn bg-warning bg-gradient mt-2 w-50" (click)=" findByCategories(c)">{{c}}</button>
-                </div>
+
 
 
                 <!-- **Chercher par mots clés** -->
-                <div class="col-md-6 col-sm-2 mt-5">
-                    <form class="row form-inline" (ngSubmit)="findbykeyword(f.value)" #f="ngForm">
+                <div class=" ">
+                    <form class="row form-inline d-flex flex-end me-5 ms-5 mt-3" (ngSubmit)="findbykeyword(f.value)"
+                        #f="ngForm">
                         <div class="">
                             <input type="text" class="form-control" name="keyword" ngModel
                                 placeholder="par mot clé ...">
@@ -45,7 +45,9 @@
 
 
 
-
+                <div class="  opacity-75  me-5 ms-5 mt-3" *ngFor="let c of categories">
+                    <button class="btn bg-warning bg-gradient " (click)=" findByCategories(c)">{{c}}</button>
+                </div>
 
 
 
@@ -67,7 +69,7 @@
 
     <!-- µµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµ µµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµ -->
 
-    <div class="row bg-secondary pt-5 shadow-lg p-3 mb-5 bg-body rounded ">
+    <div class="row bg-secondary bg-gradient pt-5 shadow-lg p-3 mb-5 bg-body rounded ">
 
 
 
@@ -77,10 +79,10 @@
 
 
         <!-- ******************************************** les produits (campings)************************************************-->
-        <div class="col bg-secondary  me-4  ms-3 h-100 mb-4"
+        <div class="col bg-secondary  me-4  ms-3 h-100 mb-4 "
             *ngFor="let r of reservations | paginate : { itemsPerPage: 3, currentPage: p}">
             <div class="card shadow-sm">
-                <img class="card-img-top img-fluid" width="100%" height="225px" src="{{r.image}}" alt="">
+                <img class="card-img-top img-fluid h-100" width="100%" height="225px" src="{{r.image}}" alt="">
                 <div class="card-body">
                     <p class="card-text fw-bold text-center fs-2">{{r.titre}}</p>
                     <p class="card-text fw-lighter text-start">{{r.type}}</p>
@@ -329,7 +331,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-12">
-                                                        <div class="btn btn-primary payment" (click)="finalCommande()">
+                                                        <div class="btn btn-primary payment" data-bs-dismiss="modal" aria-label="Close" (click)="finalCommande()">
                                                             Make Payment
                                                         </div>
                                                     </div>
@@ -432,7 +434,7 @@
                                                         <div class="modal-footer">
                                                             <button type="button" class="btn btn-secondary"
                                                                 data-bs-dismiss="modal">Close</button>
-                                                            <button type="button" class="btn btn-primary">Save
+                                                            <button type="button" class="btn btn-primary" data-bs-dismiss="modal" aria-label="Close">Save
                                                                 changes</button>
                                                         </div>
                                                     </div>
