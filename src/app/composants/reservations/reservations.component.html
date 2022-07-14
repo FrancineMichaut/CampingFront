@@ -1,19 +1,20 @@
+
+
+    <div class="border border-secondary" style="background-color: #fefefe;
+    background-image: linear-gradient(315deg, #fefefe 0%, #00a4e4 74%);">
+        <div class="">
+
+
+
+
+
 <!-- **********************************************************Methode Chercher par prix************************** -->
-<div class="container mt-5  p-3 mb-5 bg-body rounded ">
-    <div class="row ">
-        <div class="col-9">
-
-
-
-
-
-
-            <form class="row form-inline ms-5" #pr="ngForm">
-                <div class="col-4">
-                    <input type="number" class="form-control " name="min" ngModel placeholder="Prix min ..."
+            <form class="row form-inline me-5 d-flex align-items-center justify-content-end" #pr="ngForm">
+                <div class="col-1">
+                    <input type="number" class="form-control rounded-pill" name="min" ngModel placeholder="Prix min ..."
                         value="min">
                 </div>
-                <div class="col-4"> <input type="number" class="form-control" name="max" ngModel
+                <div class="col-1"> <input type="number" class="form-control rounded-pill" name="max" ngModel
                         placeholder="Prix max ..." value="max">
                 </div>
                 <button type="submit" (click)="findbyprice(pr.value)"
@@ -24,17 +25,17 @@
 
 
 
-            <!-- **********************************************Chercher par Catégories******************************************** -->
+            <!-- **********************************************Chercher par mot clef et Catégories******************************************** -->
             <div class="d-flex flex-row mb-3">
 
 
 
                 <!-- **Chercher par mots clés** -->
                 <div class=" ">
-                    <form class="row form-inline d-flex flex-end me-5 ms-5 mt-3" (ngSubmit)="findbykeyword(f.value)"
+                    <form class="row form-inline d-flex flex-end me-5 ms-5 " (ngSubmit)="findbykeyword(f.value)"
                         #f="ngForm">
                         <div class="">
-                            <input type="text" class="form-control" name="keyword" ngModel
+                            <input type="text" class="form-control rounded-pill" name="keyword" ngModel
                                 placeholder="par mot clé ...">
                         </div>
                         <button type="submit" class="btn"><i
@@ -44,11 +45,14 @@
 
 
 
-
-                <div class="  opacity-75  me-5 ms-5 mt-3" *ngFor="let c of categories">
-                    <button class="btn bg-warning bg-gradient " (click)=" findByCategories(c)">{{c}}</button>
+ <!-- **********************************************Chercher par Catégories******************************************** -->
+ 
+ 
+ <div class="d-flex flex-row mb-3 ms-5">
+                <div class="  opacity-75  me-5 ms-5" *ngFor="let c of categories">
+                    <button class="btn bg-warning bg-gradient rounded-pill" (click)=" findByCategories(c)">{{c}}</button>
                 </div>
-
+            </div>
 
 
 
@@ -69,7 +73,12 @@
 
     <!-- µµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµ µµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµ -->
 
-    <div class="row bg-secondary bg-gradient pt-5 shadow-lg p-3 mb-5 bg-body rounded ">
+
+
+    <div class="container mt-5  p-3 mb-5 bg-body " style="background-color: #fefefe;
+    background-image: linear-gradient(315deg, #fefefe 0%, #00a4e4 74%);">
+
+    <div class="row bg-secondary bg-gradient pt-5 shadow-lg p-3 mb-5 bg-body rounded " >
 
 
 
@@ -79,7 +88,8 @@
 
 
         <!-- ******************************************** les produits (campings)************************************************-->
-        <div class="col bg-secondary bg-gradient me-4  ms-3 h-100 mb-4 "
+        <div class="col bg-secondary bg-gradient me-4  ms-3 h-100 mb-4 " style="background-color: #63d471;
+        background-image: linear-gradient(315deg, #63d471 0%, #233329 74%);"
             *ngFor="let r of reservations | paginate : { itemsPerPage: 3, currentPage: p}">
             <div class="card shadow-sm">
                 <img class="card-img-top img-fluid h-100" width="100%" height="225px" src="{{r.image}}" alt="">
