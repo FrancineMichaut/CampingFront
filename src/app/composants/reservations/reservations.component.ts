@@ -12,7 +12,7 @@ export class ReservationsComponent implements OnInit {
     // Pagination
     p: number = 1
 
-  bookcamp :any ={
+  bookcamp :any ={    // correspond au schéma du backend 
     titre:"",
     type:"",
     image :"",
