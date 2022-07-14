@@ -18,6 +18,7 @@ export class GestiondesreservationsComponent implements OnInit {
   getBooks(){
     this.sc.getBook().subscribe(data=>{
       this.books = data
+      this.getBooks()
     })
   }
 

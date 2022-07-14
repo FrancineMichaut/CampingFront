@@ -17,7 +17,7 @@
                         placeholder="Prix max ..." value="max">
                 </div>
                 <button type="submit" (click)="findbyprice(pr.value)"
-                    class="col-auto btn btn-secondary bg-gradient opacity-75 mb-2 border- rounded-circle 50"><i
+                    class="col-auto opacity-75 mb-2 border- rounded-circle 50"><i
                         class="fa-solid fa-magnifying-glass-dollar text-warning fa-xl"></i></button>
             </form>
 
@@ -79,7 +79,7 @@
 
 
         <!-- ******************************************** les produits (campings)************************************************-->
-        <div class="col bg-secondary  me-4  ms-3 h-100 mb-4 "
+        <div class="col bg-secondary bg-gradient me-4  ms-3 h-100 mb-4 "
             *ngFor="let r of reservations | paginate : { itemsPerPage: 3, currentPage: p}">
             <div class="card shadow-sm">
                 <img class="card-img-top img-fluid h-100" width="100%" height="225px" src="{{r.image}}" alt="">
@@ -100,7 +100,7 @@
                         <!-- Button trigger modal -->
                         <button type="submit" class="btn btn-outline-primary" id="exampleModal"
                             (click)="recupInfoReservation(r)" data-bs-toggle="modal" data-bs-target="#exModal">
-                            Réserver
+                            <i class="fa-solid fa-credit-card"></i> Réserver
                         </button>
 
 
