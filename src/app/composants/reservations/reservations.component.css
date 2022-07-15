@@ -1,25 +1,19 @@
-/* .cursor-pointer {
+/* *******************************************CSS du formulaire***************************************************** */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+
+.cursor-pointer {
     cursor: pointer;
 }
 
 .pagination-controls {
     text-align: center !important;
-}
+} 
 
-.border-start{
+/* .border-start{
     text-align: center !important;
-} */
-
-
-
-
-
-
-
-
-/* *******************************************CSS du formulaire***************************************************** */
-
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+}  */
 
 
 .container {
