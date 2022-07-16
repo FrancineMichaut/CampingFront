@@ -8,11 +8,11 @@
         <!-- **********************************************************Methode Chercher par prix************************** -->
        
         <form class=" form-inline d-flex justify-content-end pt-3 me-2" #pr="ngForm">
-            <div class="col-1 d-flex justify-content-end">
+            <div  id="boutprixmin" class="col-1 d-flex justify-content-end">
                 <input type="number" class="form-control rounded-pill border-danger" name="min" ngModel placeholder="Prix min ..."
                     value="min">
             </div>
-            <div class="col-1"> <input type="number" class="form-control rounded-pill border-danger" name="max" ngModel
+            <div id="boutprixmax" class="col-1"> <input type="number" class="form-control rounded-pill border-danger" name="max" ngModel
                     placeholder="Prix max ..." value="max">
             </div>
             <button type="submit" (click)="findbyprice(pr.value)"
@@ -24,7 +24,7 @@
 
 
         <!-- **********************************************Chercher par mot clef et Catégories******************************************** -->
-        <div class="d-flex flex-row pb-3">
+        <div id="divcc" class="d-flex flex-row pb-3">
 
 
 
@@ -32,7 +32,7 @@
             <div class="ms-5">
                 <form class="row form-inline d-flex flex-end me-5  rounded-pill pb-1" (ngSubmit)="findbykeyword(f.value)"
                     #f="ngForm">
-                    <div class="">
+                    <div id="boutkey" class="">
                         <input type="text" class="form-control rounded-pill text-white border-danger" name="keyword" ngModel
                             placeholder="par mot clé ...">
                     </div>
@@ -46,9 +46,9 @@
             <!-- **********************************************Chercher par Catégories******************************************** -->
 
 
-            <div class="d-flex flex-row mb-5 ms-5 rounded-pill shadow p-3 bg-body rounded">
-                <div class="opacity-75  me-5 ms-5" *ngFor="let c of categories">
-                    <button class="btn rounded-pill fs-5" style="background-color: #fbb034;
+            <div id="divcat" class="d-flex flex-row mb-5 ms-5 rounded-pill shadow p-3 bg-body rounded">
+                <div id="butcat" class="opacity-75  me-5 ms-5" *ngFor="let c of categories">
+                    <button id="boutcat" class="btn rounded-pill fs-5" style="background-color: #fbb034;
                     background-image: linear-gradient(315deg, #fbb034 0%, #ffdd00 74%);"
                         (click)=" findByCategories(c)">{{c}}</button>
                 </div>
