@@ -40,7 +40,7 @@ export class ReservationsComponent implements OnInit {
     };
 
   // Methode de recherche par catégories 
-    categories : any = [" Eco "," Luxe ", " Chic "," Deluxe "]
+    categories : any = [" Economique "," Luxe ", " Chic "," Deluxe "]
 
   rupdate = {
     id : "",
