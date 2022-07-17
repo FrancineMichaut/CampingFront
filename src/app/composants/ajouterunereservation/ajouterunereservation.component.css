@@ -1,0 +1,30 @@
+
+@media all and (max-width: 525px) {
+    
+
+ .table{
+    background-color: aliceblue !important;
+    
+}
+
+/*.input{
+    display: flex;
+    flex-direction: column;
+}
+
+.label{
+    display: flex;
+    flex-direction: column;
+} */
+
+
+#des{
+    display: none;
+}
+
+#titredes{
+    display: none;
+}
+
+
+}

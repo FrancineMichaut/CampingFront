@@ -1,15 +1,16 @@
 <!-- **************************************************** Table bootstrap pour admin************************************* -->
-<div class="container">
+
+<div id="cont" class="Row m-3">
 
     <table class="table mt-5 bg-secondary bg-gradient ">
         <thead>
             <tr>
-                <th scope="col">Photo</th>
-                <th scope="col">Nom</th>
-                <th scope="col">Description</th>
-                <th scope="col">Type</th>
-                <th scope="col">Prix</th>
-                <th scope="col">Action </th>
+                <th scope="col-2">Photo</th>
+                <th scope="col-2">Nom</th>
+                <th id="titredes" scope="col-2">Description</th>
+                <th scope="col-2">Type</th>
+                <th scope="col-2">Prix</th>
+                <th scope="col-2">Action </th>
             </tr>
         </thead>
         <tbody>
@@ -19,7 +20,7 @@
                         height="225px" src="{{r.image}}" alt=""></td>
                 <th scope="row">{{r.titre}}</th>
 
-                <td>{{r.description}}</td>
+                <td id="des">{{r.description}}</td>
                 <td>{{r.type}}</td>
                 <td>{{r.price}}</td>
 
@@ -166,3 +167,5 @@
    </form> 
   </div>
  -->
+
+
