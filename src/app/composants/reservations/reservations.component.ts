@@ -150,6 +150,7 @@ export class ReservationsComponent implements OnInit {
     this.bookcamp.dateArrivee = f.date
     this.bookcamp.nomClient = f.nom
     this.bookcamp.nombreDeNuits = f.nombreDeNuit
+    this.bookcamp.totalPrice =f.nombreDeNuit*this.reservation.price
 
 
     console.log("ma reservation : ", this.bookcamp);
