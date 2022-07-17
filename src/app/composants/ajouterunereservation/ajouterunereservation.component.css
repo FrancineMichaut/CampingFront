@@ -1,13 +1,12 @@
-
 @media all and (max-width: 525px) {
-    
 
- .table{
-    background-color: aliceblue !important;
-    
-}
 
-/*.input{
+    .table {
+        background-color: aliceblue !important;
+
+    }
+
+    /*.input{
     display: flex;
     flex-direction: column;
 }
@@ -18,13 +17,13 @@
 } */
 
 
-#des{
-    display: none;
-}
+    #des {
+        display: none;
+    }
 
-#titredes{
-    display: none;
-}
+    #titredes {
+        display: none;
+    }
 
 
 }
