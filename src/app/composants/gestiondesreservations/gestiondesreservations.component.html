@@ -1,27 +1,25 @@
 <div id="cont" class="Row">
-    <h1 class="text-center text-success"><strong>Gestion des réservations </strong></h1>
+  <h1 class="text-center text-success"><strong>Gestion des réservations </strong></h1>
 
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col-2">Nom du client</th>
+        <th scope="col-2">Nom bangalow</th>
+        <th scope="col-2">Prix chambre</th>
+        <th scope="col-2">Nombre de nuits</th>
+        <th scope="col-3">Prix total</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let b of books">
 
-
-    <table class="table">
-        <thead>
-          <tr>
-            <th scope="col-2">Nom du client</th>
-            <th scope="col-2">Nom bangalow</th>
-            <th scope="col-2">Prix chambre</th>
-            <th scope="col-2">Nombre de nuits</th>
-            <th scope="col-3">Prix total</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr  *ngFor="let b of books">
-          
-            <td>{{b.nomClient}}</td>
-            <th scope="row">{{b.titre}}</th>
-            <td>{{b.price}}€</td>
-            <td>{{b.nombreDeNuits}}</td>
-            <td class=" text-primary fw-bolder fw-lighter">{{b.totalPrice}}€</td>
-          </tr>
-        </tbody>
-      </table>
+        <td>{{b.nomClient}}</td>
+        <th scope="row">{{b.titre}}</th>
+        <td>{{b.price}}€</td>
+        <td>{{b.nombreDeNuits}}</td>
+        <td class=" text-primary fw-bolder fw-lighter">{{b.totalPrice}}€</td>
+      </tr>
+    </tbody>
+  </table>
 </div>

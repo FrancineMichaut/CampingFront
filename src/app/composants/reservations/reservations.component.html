@@ -1,4 +1,4 @@
-<div class="bg-body rounded" style="background: radial-gradient(closest-side, #3f87a6, #ebf8e1, #f9ca98);">
+<div id="nav" class="bg-body rounded border-bottom border border-warning">
 
     <!-- **********************************************************Methode Chercher par prix************************** -->
 
@@ -19,14 +19,14 @@
 
 
     <!-- **********************************************Chercher par mot clé******************************************** -->
-    <div id="divcc" class="d-flex flex-row pb-3 ">
+    <div id="divcc" class=" d-flex flex-row pb-3 ">
 
         <!-- **Chercher par mots clés** -->
         <div class="ms-5 ">
             <form class="row form-inline d-flex flex-end me-5  rounded-pill pb-1" (ngSubmit)="findbykeyword(f.value)"
                 #f="ngForm">
                 <div id="boutkey" class="">
-                    <input type="text"
+                    <input id="inputkey" type="text"
                         class="form-control rounded-pill text-success fw-bold fs-5 bg-dark bg-gradient opacity-50 border-danger"
                         name="keyword" ngModel placeholder="par mot clé ...">
                 </div>
@@ -38,9 +38,9 @@
         <!-- **********************************************Chercher par Catégories************************************** -->
 
         <div id="divcat"
-            class="findbycat d-flex flex-row mb-5 ms-5 rounded-pill shadow p-3 bg-danger bg-gradient rounded opacity-75">
+            class="border-bottom border border-warning findbycat mb-5 ms-5 rounded-pill shadow p-3 bg-gradient rounded opacity-75">
             <div id="butcat" class="opacity-75  me-0 ms-3" *ngFor="let c of categories">
-                <button id="boutcat" class="btn rounded-pill fs-5" style="background-color: #fbb034;
+                <button id="boutcat" class="border-bottom border border-light btn rounded-pill fs-5" style="background-color: #fbb034;
                     background-image: linear-gradient(315deg, #fbb034 0%, #ffdd00 74%);"
                     (click)=" findByCategories(c)">{{c}}</button>
             </div>
@@ -50,16 +50,20 @@
 </div>
 
 
+<!-- µµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµ Les produits modal et formulaire de paiement µµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµ -->
 
-<!-- µµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµ µµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµ -->
-
+<!-- ****************************************message d'alert après paiement effectué************************************ -->
 <div class="  p-3  bg-body ">
+    <div class="container">
+        <div class=" fs-5 btn btn-success p-4" *ngIf="success">Hippocampia vous remercie pour votre choix. Francine et Alpha, vous souhaite un séjour<strong> inoubliable
+            </strong></div>
+    </div>
 
     <div class="row  pt-5 shadow-lg p-3 mb-5 bg-body rounded border-bottom border border-warning ">
 
 
         <!-- ******************************************** les produits (campings)**************************************-->
-        <div class="col  me-4  ms-3 h-100 mb-4 rounded p-5 " style="background-color: #ebebeb;"
+        <div class="col  me-4  ms-3 h-100 mb-1 rounded p-5 " style="background-color: #ebebeb;"
             *ngFor="let r of reservations | paginate : { itemsPerPage: 3, currentPage: p}">
             <div class="card shadow-sm shadow-sm p-3 bg-body rounded">
                 <img class="card-img-top img-fluid h-100" width="100%" height="225px" src="{{r.image}}" alt="">
@@ -311,6 +315,10 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-12">
+
+
+
+
                                                         <div class="btn btn-primary payment" data-bs-dismiss="modal"
                                                             aria-label="Close" (click)="finalCommande()">
                                                             Make Payment
@@ -318,7 +326,6 @@
                                                     </div>
                                                 </div>
                                             </div>
-
 
                                         </div>
 
@@ -351,83 +358,7 @@
                                                 <button type="submit" class="btn btn-secondary">Payer</button>
 
 
-                                                <!-- ********************************************bouton tigger Payer et formualire de paiement****************************/ -->
-
-
-                                                <!-- Button trigger modal -->
-                                                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                                    data-bs-target="#exampModal" *ngIf="paiment">
-                                                    finis le paiment Payer
-                                                </button>
                                             </div>
-                                            <!-- Modal -->
-                                            <div class="modal fade" id="exampModal" tabindex="-1"
-                                                aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                                <div class="modal-dialog">
-                                                    <div class="modal-content">
-                                                        <div class="modal-header">
-                                                            <h5 class="modal-title" id="exampleModal">Modal title</h5>
-                                                            <button type="button" class="btn-close"
-                                                                data-bs-dismiss="modal" aria-label="Close"></button>
-                                                        </div>
-                                                        <div class="modal-body">
-                                                            <!-- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^Formulaire de paiement^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ -->
-
-                                                            <form>
-                                                                <div class="mb-3">
-                                                                    <label for="exampleInputEmail1"
-                                                                        class="form-label">Email address</label>
-                                                                    <input type="email" class="form-control"
-                                                                        id="exampleInputEmail1"
-                                                                        aria-describedby="emailHelp">
-                                                                    <div id="emailHelp" class="form-text">We'll never
-                                                                        share your email with anyone else.</div>
-                                                                </div>
-                                                                <div class="mb-3">
-                                                                    <label for="exampleInputPassword1"
-                                                                        class="form-label">Password</label>
-                                                                    <input type="password" class="form-control"
-                                                                        id="exampleInputPassword1">
-                                                                </div>
-                                                                <div class="mb-3 form-check">
-                                                                    <input type="checkbox" class="form-check-input"
-                                                                        id="exampleCheck1">
-                                                                    <label class="form-check-label"
-                                                                        for="exampleCheck1">Check me out</label>
-                                                                </div>
-                                                                <button type="submit"
-                                                                    class="btn btn-primary">Submit</button>
-                                                            </form>
-
-                                                            <!-- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^Fin Formuulaire de paiement^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ -->
-                                                        </div>
-                                                        <div class="modal-footer">
-                                                            <button type="button" class="btn btn-secondary"
-                                                                data-bs-dismiss="modal">Close</button>
-                                                            <button type="button" class="btn btn-primary"
-                                                                data-bs-dismiss="modal" aria-label="Close">Save
-                                                                changes</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-
-
-
-
-                                            <!-- ********************************************FIN bouton tigger save book et formualire de paiement****************************/ -->
-
-
-
-
-
-
-                                            <!-- <button type="submit" class="btn btn-primary" data-bs-dismiss="modal"
-                                                (click)="envoiInfoReservation(r)">Save
-                                                Book !</button> -->
-                                            <!-- addBook, méthode create qui ajoute un objet entièrement dans la base de donnée, dans le deuxième tableau : réseravtions -->
-
 
 
                                         </form>
@@ -438,8 +369,7 @@
                                 </div>
                             </div>
 
-                            <!-- ***************méthode  delete avec id de chambre en paramètre*********** -->
-                            <!-- <p class="btn btn-outline-danger ms-3 mb-0" (click)="delete(c.id)">delete</p> -->
+
                         </div>
 
 
@@ -449,8 +379,8 @@
         </div>
 
     </div>
-
-    <!---------------------------- Pagination-------------------------------------------- -->
-    <pagination-controls class=" pagination-controls fw-bold fs-6 fst-italic text-secondary bg-gradient"
-        previousLabel="Précédent" nextLabel="Suivant" (pageChange)="changePage($event)">
-    </pagination-controls>
+</div>
+<!---------------------------- Pagination-------------------------------------------- -->
+<pagination-controls class=" pagination-controls fw-bold fs-6 fst-italic text-secondary bg-gradient"
+    previousLabel="Précédent" nextLabel="Suivant" (pageChange)="changePage($event)">
+</pagination-controls>
