@@ -18,7 +18,7 @@ export class BarrenavComponent implements OnInit {
   boutonLogin: Boolean = false;
   alertId: Boolean = false;
 
-  // *************************************méthode qui valide ou non le mot de passe de l'administrateur************************
+  // ********************************méthode qui valide ou non le mot de passe de l'administrateur************************
   validate() {
     console.log(this.recupform);
 
